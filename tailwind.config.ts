@@ -12,6 +12,13 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      animation: {
+        'gradient': 'gradient 15s ease infinite',
+        'float': 'float 6s ease-in-out infinite',
+      },
+      backdropBlur: {
+        'md': '12px',
+      },
     },
   },
   plugins: [],
