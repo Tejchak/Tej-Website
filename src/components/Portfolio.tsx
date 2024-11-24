@@ -154,20 +154,11 @@ export default function Portfolio() {
               transition={{ duration: 0.5 }}
             >
               <section id="home" className="min-h-screen flex items-center justify-center relative">
-                <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -50 }}
-                  transition={{ duration: 0.5 }}
-                  viewport={{ margin: "-100px" }}
-                  className="text-center z-10"
-                >
+                <div className="text-center z-10">
                   <motion.div
-                    initial={{ scale: 0.8, opacity: 0 }}
-                    whileInView={{ scale: 1, opacity: 1 }}
-                    exit={{ scale: 0.8, opacity: 0 }}
-                    transition={{ duration: 0.5 }}
-                    viewport={{ margin: "-100px" }}
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ type: 'spring', stiffness: 100, delay: 0.5 }}
                     className="mb-4"
                   >
                     <TypeAnimation
@@ -187,20 +178,16 @@ export default function Portfolio() {
                   </motion.div>
                   <motion.p
                     initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -50 }}
-                    transition={{ duration: 0.5 }}
-                    viewport={{ margin: "-100px" }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 1 }}
                     className="text-xl mb-8"
                   >
                     Computer Science Student & Aspiring Software Engineer
                   </motion.p>
                   <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -50 }}
-                    transition={{ duration: 0.5 }}
-                    viewport={{ margin: "-100px" }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.8, delay: 1.5 }}
                     className="flex justify-center space-x-4"
                   >
                     {[
@@ -221,7 +208,7 @@ export default function Portfolio() {
                       </motion.a>
                     ))}
                   </motion.div>
-                </motion.div>
+                </div>
                 <motion.div
                   className="absolute inset-0 z-0"
                   initial={{ opacity: 0 }}
@@ -370,96 +357,72 @@ export default function Portfolio() {
                     transition={{ duration: 0.5 }}
                     viewport={{ margin: "-100px" }}
                   >
-                    <motion.h2 
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -20 }}
-                      transition={{ duration: 0.5 }}
-                      viewport={{ margin: "-100px" }}
-                      className="text-4xl font-bold mb-8"
-                    >
-                      Let's Connect
-                    </motion.h2>
+                    <h2 className="text-4xl font-bold mb-8">Let's Connect</h2>
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -20 }}
                       transition={{ duration: 0.5 }}
-                      viewport={{ margin: "-100px" }}
+                      viewport={{ once: true }}
                       className="bg-gray-800/50 p-8 rounded-lg shadow-lg backdrop-blur-sm"
                     >
-                      <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        transition={{ duration: 0.5 }}
-                        viewport={{ margin: "-100px" }}
-                        className="text-xl mb-8"
-                      >
+                      <p className="text-xl mb-8">
                         I'm always excited to connect with fellow developers, potential collaborators, 
                         and industry professionals. Whether you have a question, want to discuss a project, 
                         or just want to say hello, feel free to reach out!
-                      </motion.p>
+                      </p>
                       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        {[
-                          {
-                            href: "mailto:tejchak04@gmail.com",
-                            icon: Mail,
-                            text: "Email Me"
-                          },
-                          {
-                            href: "https://www.linkedin.com/in/tej-chakravarthy-3b37132a2/",
-                            icon: Linkedin,
-                            text: "Connect on LinkedIn"
-                          },
-                          {
-                            href: "https://outlook.office.com/bookwithme/user/c74682626214455abcbf8db28ad004f9@northeastern.edu?anonymous&ep=plink",
-                            icon: Calendar,
-                            text: "Schedule a Meeting"
-                          }
-                        ].map((item, index) => (
-                          <motion.a
-                            key={index}
-                            href={item.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            exit={{ opacity: 0, y: -20 }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            viewport={{ margin: "-100px" }}
-                            whileHover={{ scale: 1.02 }}
-                            whileTap={{ scale: 0.98 }}
-                            className="flex items-center justify-center gap-3 bg-gray-700/50 hover:bg-gray-600/50 
-                              transition-colors p-4 rounded-lg group"
-                          >
-                            <item.icon className="text-blue-400 group-hover:text-blue-300" />
-                            <span>{item.text}</span>
-                          </motion.a>
-                        ))}
+                        <motion.a
+                          href="mailto:tejchak04@gmail.com"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center gap-3 bg-gray-700/50 hover:bg-gray-600/50 
+                            transition-colors p-4 rounded-lg group"
+                          whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.98 }}
+                        >
+                          <Mail className="text-blue-400 group-hover:text-blue-300" />
+                          <span>Email Me</span>
+                        </motion.a>
+                        
+                        <motion.a
+                          href="https://www.linkedin.com/in/tej-chakravarthy-3b37132a2/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center gap-3 bg-gray-700/50 hover:bg-gray-600/50 
+                            transition-colors p-4 rounded-lg group"
+                          whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.98 }}
+                        >
+                          <Linkedin className="text-blue-400 group-hover:text-blue-300" />
+                          <span>Connect on LinkedIn</span>
+                        </motion.a>
+
+                        <motion.a
+                          href="https://outlook.office.com/bookwithme/user/c74682626214455abcbf8db28ad004f9@northeastern.edu?anonymous&ep=plink"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center gap-3 bg-gray-700/50 hover:bg-gray-600/50 
+                            transition-colors p-4 rounded-lg group"
+                          whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.98 }}
+                        >
+                          <Calendar className="text-blue-400 group-hover:text-blue-300" />
+                          <span>Schedule a Meeting</span>
+                        </motion.a>
                       </div>
                     </motion.div>
                   </motion.div>
                 </div>
               </section>
 
-              <motion.footer 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ margin: "-100px" }}
-                className="bg-black/40 backdrop-blur-md text-center py-6"
-              >
+              <footer className="bg-black/40 backdrop-blur-md text-center py-6">
                 <p>&copy; 2024 Tej Chakravarthy. All rights reserved.</p>
-              </motion.footer>
+              </footer>
 
               <motion.div
                 initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ margin: "-100px" }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 1 }}
                 className="fixed bottom-8 right-8 z-50"
               >
                 <motion.button
