@@ -222,10 +222,10 @@ export default function Portfolio() {
               <section id="experience" className="py-20 bg-black/20 backdrop-blur-sm">
                 <div className="container mx-auto px-6">
                   <motion.div
-                    initial={{ opacity: 0, y: 100 }}
+                    initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true, margin: "-100px" }}
+                    viewport={{ once: false, margin: "-100px" }}
+                    transition={{ duration: 0.6 }}
                   >
                     <h2 className="text-4xl font-bold mb-8">Experience</h2>
                     <div className="space-y-8">
@@ -253,8 +253,8 @@ export default function Portfolio() {
                           key={index}
                           initial={{ opacity: 0, x: -50 }}
                           whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: false }}
                           transition={{ duration: 0.5, delay: index * 0.1 }}
-                          viewport={{ once: true }}
                           className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
                         >
                           <h3 className="text-2xl font-semibold mb-2">{job.title}</h3>
@@ -271,10 +271,10 @@ export default function Portfolio() {
               <section id="projects" className="py-20 bg-black/30 backdrop-blur-sm">
                 <div className="container mx-auto px-6">
                   <motion.div
-                    initial={{ opacity: 0, y: 100 }}
+                    initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true, margin: "-100px" }}
+                    viewport={{ once: false, margin: "-100px" }}
+                    transition={{ duration: 0.6 }}
                   >
                     <h2 className="text-4xl font-bold mb-8">Projects</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -294,8 +294,8 @@ export default function Portfolio() {
                           key={index}
                           initial={{ opacity: 0, scale: 0.8 }}
                           whileInView={{ opacity: 1, scale: 1 }}
-                          transition={{ duration: 0.5 }}
-                          viewport={{ once: true }}
+                          viewport={{ once: false }}
+                          transition={{ duration: 0.5, delay: index * 0.1 }}
                           className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
                         >
                           <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>
@@ -317,17 +317,17 @@ export default function Portfolio() {
               <section id="education" className="py-20 bg-black/20 backdrop-blur-sm">
                 <div className="container mx-auto px-6">
                   <motion.div
-                    initial={{ opacity: 0, y: 100 }}
+                    initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true, margin: "-100px" }}
+                    viewport={{ once: false, margin: "-100px" }}
+                    transition={{ duration: 0.6 }}
                   >
                     <h2 className="text-4xl font-bold mb-8">Education</h2>
                     <motion.div
                       initial={{ opacity: 0, scale: 0.8 }}
                       whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: false }}
                       transition={{ duration: 0.5 }}
-                      viewport={{ once: true }}
                       className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
                     >
                       <h3 className="text-2xl font-semibold mb-2">Northeastern University</h3>
@@ -345,17 +345,17 @@ export default function Portfolio() {
               <section id="contact" className="py-20 bg-black/20 backdrop-blur-sm">
                 <div className="container mx-auto px-6">
                   <motion.div
-                    initial={{ opacity: 0, y: 100 }}
+                    initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true, margin: "-100px" }}
+                    viewport={{ once: false, margin: "-100px" }}
+                    transition={{ duration: 0.6 }}
                   >
                     <h2 className="text-4xl font-bold mb-8">Let's Connect</h2>
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: false }}
                       transition={{ duration: 0.5 }}
-                      viewport={{ once: true }}
                       className="bg-gray-800/50 p-8 rounded-lg shadow-lg backdrop-blur-sm"
                     >
                       <p className="text-xl mb-8">
