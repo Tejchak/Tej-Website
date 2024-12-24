@@ -191,7 +191,7 @@ export default function Portfolio() {
                     className="flex justify-center space-x-4"
                   >
                     {[
-                      { href: "https://github.com/yourgithub", icon: GitHub },
+                      { href: "https://github.com/Tejchak", icon: GitHub },
                       { href: "https://www.linkedin.com/in/tej-chakravarthy-3b37132a2/", icon: Linkedin },
                       { href: "mailto:tejchak04@gmail.com", icon: Mail }
                     ].map((item, index) => (
