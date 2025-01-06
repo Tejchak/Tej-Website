@@ -231,22 +231,22 @@ export default function Portfolio() {
                     <div className="space-y-8">
                       {[
                         {
-                          title: 'Co-Founder',
+                          title: 'Software Engineer',
                           company: 'Take Two (Startup Social Media App)',
                           date: 'June 2024 - Present',
-                          description: 'Engineered E2E development of a cross-platform social media app for movie enthusiasts.',
-                        },
-                        {
-                          title: 'Graphic Design and Social Media Intern',
-                          company: 'FOR THE GOOD FIGHT INC',
-                          date: 'May 2023 - Aug 2023',
-                          description: 'Developed visually appealing graphic designs for an e-commerce apparel store.',
+                          description: 'Integrated key frontend features for a mobile app using React Native, including profiles, posts, followers, and infinite pages. Enhanced backend functionality with Firebase NoSQL to support user actions such as creating, editing, and deleting lists. Improved app usability by adding refresh functions for a seamless user experience.',
                         },
                         {
                           title: 'Teaching Assistant',
                           company: 'Northeastern University',
                           date: 'Sept 2024 - Present',
-                          description: 'Guided students through complex computer science problems and assisted in course material refinement.',
+                          description: 'Guided students through complex computer science problems, developed and led review sessions to help students study. Assisted in grading student exams, collaborated with faculty to refine course material and address student challenges.',
+                        },
+                        {
+                          title: 'Graphic Design and Social Media Intern',
+                          company: 'FOR THE GOOD FIGHT INC',
+                          date: 'May 2023 - Aug 2023',
+                          description: 'Spearheaded the development of visually pleasing graphic designs for an e-commerce apparel store using Canva. Coordinated with team members to ensure cohesive and impactful brand representation online (Instagram, Pinterest, Etsy)',
                         },
                       ].map((job, index) => (
                         <motion.div
