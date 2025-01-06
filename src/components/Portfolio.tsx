@@ -335,7 +335,7 @@ export default function Portfolio() {
                       <p className="text-sm text-gray-400 mb-4">Sept 2023 - May 2027</p>
                       <p>Major: Computer Science | GPA: 3.92 | Dean's List</p>
                       <p className="mt-2">
-                        Relevant Coursework: Discrete Structures, Foundations of Cybersecurity, Object Oriented Design, Algorithms and Data
+                        Relevant Coursework: Discrete Structures, Foundations of Cybersecurity, Object Oriented Design, Algorithms and Data, Database Design, Machine Learning and Data Mining, Computer Systems
                       </p>
                     </motion.div>
                   </motion.div>
