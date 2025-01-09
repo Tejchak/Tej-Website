@@ -363,7 +363,7 @@ export default function Portfolio() {
                         and industry professionals. Whether you have a question, want to discuss a project, 
                         or just want to say hello, feel free to reach out!
                       </p>
-                      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                         <motion.a
                           href="mailto:tejchak04@gmail.com"
                           target="_blank"
@@ -391,6 +391,19 @@ export default function Portfolio() {
                         </motion.a>
 
                         <motion.a
+                          href="https://github.com/Tejchak"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center gap-3 bg-gray-700/50 hover:bg-gray-600/50 
+                            transition-colors p-4 rounded-lg group"
+                          whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.98 }}
+                        >
+                          <GitHub className="text-blue-400 group-hover:text-blue-300" />
+                          <span>Reach My GitHub</span>
+                        </motion.a>
+
+                        <motion.a
                           href="https://outlook.office.com/bookwithme/user/c74682626214455abcbf8db28ad004f9@northeastern.edu?anonymous&ep=plink"
                           target="_blank"
                           rel="noopener noreferrer"
@@ -409,22 +422,24 @@ export default function Portfolio() {
               </section>
 
               <footer className="bg-black/40 backdrop-blur-md text-center py-6">
-                <p>&copy; 2024 Tej Chakravarthy. All rights reserved.</p>
+                <div className="flex flex-col items-center gap-4">
+                  <p>&copy; 2024 Tej Chakravarthy. All rights reserved.</p>
+                </div>
               </footer>
 
+              {/* Always show button but change direction based on section */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 1 }}
                 className="fixed bottom-8 right-8 z-50"
               >
                 <motion.button
-                  onClick={() => scrollToSection('home')}
+                  onClick={() => scrollToSection(activeSection === 'home' ? 'experience' : 'home')}
                   className="bg-blue-500 text-white p-3 rounded-full shadow-lg hover:bg-blue-600 transition-colors"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  <ChevronDown className="transform rotate-180" />
+                  <ChevronDown className={activeSection === 'home' ? '' : 'transform rotate-180'} />
                 </motion.button>
               </motion.div>
             </motion.div>
