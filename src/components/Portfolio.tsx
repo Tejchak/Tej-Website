@@ -234,13 +234,13 @@ export default function Portfolio() {
                           title: 'Software Engineer',
                           company: 'Take Two (Startup Social Media App)',
                           date: 'June 2024 - Present',
-                          description: 'Integrated key frontend features for a mobile app using React Native, including profiles, posts, followers, and infinite pages. Enhanced backend functionality with Firebase NoSQL to support user actions such as creating, editing, and deleting lists. Improved app usability by adding refresh functions for a seamless user experience.',
+                          description: 'Integrated key frontend features for a mobile app using React Native, including profiles, posts, followers, and infinite pages. Enhanced backend functionality with Firebase NoSQL to support CRUD operations on user lists and increase scalability. Optimized client-server communication through pagination, API batch updates, lazy loading, and caching resulting in a 30% reduction in network latency.',
                         },
                         {
                           title: 'Teaching Assistant',
                           company: 'Northeastern University',
                           date: 'Sept 2024 - Present',
-                          description: 'Guided students through complex computer science problems, developed and led review sessions to help students study. Assisted in grading student exams, collaborated with faculty to refine course material and address student challenges.',
+                          description: 'Guided students through complex topics relating to graph theory, recurrence, logic, and sorting algorithms in office hours. Led Java-based labs for groups of 20 students and developed review sessions to reinforce key concepts.',
                         },
                         {
                           title: 'Graphic Design and Social Media Intern',
