@@ -443,50 +443,6 @@ export default function Portfolio() {
                     transition={{ duration: 0.5 }}
                     viewport={{ once: false }}
                   >
-                    
-                    <motion.div
-                      className="flex space-x-4 mb-8"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 0.2 }}
-                      viewport={{ once: false }}
-                    >
-                      <motion.a
-                        href="https://github.com/Tejchak"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 bg-cosmic-primary text-cosmic-light rounded-full 
-                                  hover:bg-cosmic-accent transition-all duration-300
-                                  border border-transparent hover:border-cosmic-glow"
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                      >
-                        <GitHub size={20} />
-                      </motion.a>
-                      <motion.a
-                        href="https://www.linkedin.com/in/tejchakravarthy/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="p-2 bg-cosmic-primary text-cosmic-light rounded-full 
-                                  hover:bg-cosmic-accent transition-all duration-300
-                                  border border-transparent hover:border-cosmic-glow"
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                      >
-                        <Linkedin size={20} />
-                      </motion.a>
-                      <motion.a
-                        href="mailto:tejchak04@gmail.com"
-                        className="p-2 bg-cosmic-primary text-cosmic-light rounded-full 
-                                  hover:bg-cosmic-accent transition-all duration-300
-                                  border border-transparent hover:border-cosmic-glow"
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                      >
-                        <Mail size={20} />
-                      </motion.a>
-                    </motion.div>
-                    
                     <motion.p
                       className="text-cosmic-light/70 text-sm"
                       initial={{ opacity: 0, y: 20 }}
