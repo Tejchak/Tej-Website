@@ -361,7 +361,7 @@ export default function Portfolio() {
                       <h3 className="text-2xl font-semibold mb-2 text-white">Northeastern University</h3>
                       <p className="text-cosmic-accent mb-2">Khoury College of Computer Sciences</p>
                       <p className="text-sm text-white/70 mb-4">Sept 2023 - May 2027</p>
-                      <p className="text-white/90">Major: Computer Science | GPA: 3.92 | Dean's List</p>
+                      <p className="text-white/90">Major: Computer Science | GPA: 3.91 | Dean's List</p>
                       <p className="mt-2 text-white/90">
                       Relevant Coursework: Object Oriented Design, Algorithms and Data, Computer Systems, Machine Learning and Data Mining, Database Design, Discrete Structures, Foundations of Cybersecurity
                       </p>
