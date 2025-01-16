@@ -2,40 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+:root {
+  --cosmic-dark: #0A1128;
+  --cosmic-primary: #1B3B6F;
+  --cosmic-light: #7FB3D5;
+  --cosmic-accent: #2E5EAA;
+  --cosmic-glow: #9CC3E4;
 }
 
-@keyframes float {
-  0% {
-    transform: translatey(0px);
-  }
-  50% {
-    transform: translatey(-20px);
-  }
-  100% {
-    transform: translatey(0px);
-  }
-}
-
-.animated-gradient {
-  background: linear-gradient(
-    -45deg,
-    #1a1a2e,
-    #16213e,
-    #1b2436,
-    #0f172a
-  );
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
+body {
+  background-color: var(--cosmic-dark);
+  color: var(--cosmic-light);
 }
 
 .floating-dots {
@@ -47,20 +24,26 @@
   animation: float 6s ease-in-out infinite;
 }
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.cosmic-gradient {
+  background: linear-gradient(
+    -45deg,
+    var(--cosmic-dark),
+    var(--cosmic-primary),
+    var(--cosmic-accent),
+    var(--cosmic-glow)
+  );
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
 }

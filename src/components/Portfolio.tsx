@@ -108,15 +108,15 @@ export default function Portfolio() {
   }, [])
 
   return (
-    <div className="min-h-screen animated-gradient text-white overflow-hidden relative">
+    <div className="min-h-screen bg-cosmic-dark text-white overflow-hidden relative">
       <canvas ref={canvasRef} className="fixed inset-0 z-0 opacity-50" />
       <div className="floating-dots opacity-30" />
       <div className="floating-dots opacity-20" style={{ animationDelay: '-3s' }} />
       
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/10 to-black/20" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cosmic-dark/10 to-cosmic-dark/20" />
 
       <div className="relative z-10">
-        <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-900 bg-opacity-90 backdrop-blur-sm">
+        <nav className="fixed top-0 left-0 right-0 z-50 bg-cosmic-dark/90 backdrop-blur-sm">
           <motion.div
             initial={{ y: -100 }}
             animate={{ y: 0 }}
@@ -124,13 +124,14 @@ export default function Portfolio() {
             className="container mx-auto px-6 py-3"
           >
             <div className="flex items-center justify-between">
-              <span className="text-2xl font-bold">Tej Chakravarthy</span>
+              <span className="text-2xl font-bold text-white">Tej Chakravarthy</span>
               <div className="space-x-4">
                 {['Home', 'Experience', 'Projects', 'Education', 'Contact'].map((item, index) => (
                   <motion.button
                     key={item}
                     onClick={() => scrollToSection(item.toLowerCase())}
-                    className="text-sm text-gray-300 hover:text-blue-400 transition-colors"
+                    className="text-sm text-white hover:text-cosmic-glow transition-colors
+                             border-b-2 border-transparent hover:border-cosmic-accent"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     initial={{ opacity: 0, y: -20 }}
@@ -172,7 +173,7 @@ export default function Portfolio() {
                       ]}
                       wrapper="h1"
                       speed={1}
-                      className="text-6xl font-bold"
+                      className="text-6xl font-bold text-white"
                       repeat={Infinity}
                     />
                   </motion.div>
@@ -180,7 +181,7 @@ export default function Portfolio() {
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 1 }}
-                    className="text-xl mb-8"
+                    className="text-xl mb-8 text-white/80"
                   >
                     Computer Science Student & Aspiring Software Engineer
                   </motion.p>
@@ -192,7 +193,7 @@ export default function Portfolio() {
                   >
                     {[
                       { href: "https://github.com/Tejchak", icon: GitHub },
-                      { href: "https://www.linkedin.com/in/tej-chakravarthy-3b37132a2/", icon: Linkedin },
+                      { href: "https://www.linkedin.com/in/tejchakravarthy/", icon: Linkedin },
                       { href: "mailto:tejchak04@gmail.com", icon: Mail }
                     ].map((item, index) => (
                       <motion.a
@@ -200,7 +201,9 @@ export default function Portfolio() {
                         href={item.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-gray-300 hover:text-white transition-colors"
+                        className="p-2 bg-cosmic-primary text-cosmic-light rounded-full 
+                                  hover:bg-cosmic-accent transition-all duration-300
+                                  border border-transparent hover:border-cosmic-glow"
                         whileHover={{ scale: 1.2, rotate: 360 }}
                         whileTap={{ scale: 0.9 }}
                       >
@@ -219,7 +222,7 @@ export default function Portfolio() {
                 </motion.div>
               </section>
 
-              <section id="experience" className="py-20 bg-black/20 backdrop-blur-sm">
+              <section id="experience" className="py-20 bg-cosmic-dark/20 backdrop-blur-sm">
                 <div className="container mx-auto px-6">
                   <motion.div
                     initial={{ opacity: 0, y: 50 }}
@@ -227,26 +230,26 @@ export default function Portfolio() {
                     viewport={{ once: false, margin: "-100px" }}
                     transition={{ duration: 0.6 }}
                   >
-                    <h2 className="text-4xl font-bold mb-8">Experience</h2>
+                    <h2 className="text-4xl font-bold mb-8 text-white">Experience</h2>
                     <div className="space-y-8">
                       {[
-                        {
-                          title: 'Software Engineer',
-                          company: 'Take Two (Startup Social Media App)',
-                          date: 'June 2024 - Present',
-                          description: 'Integrated key frontend features for a mobile app using React Native, including profiles, posts, followers, and infinite pages. Enhanced backend functionality with Firebase NoSQL to support CRUD operations on user lists and increase scalability. Optimized client-server communication through pagination, API batch updates, lazy loading, and caching resulting in a 30% reduction in network latency.',
-                        },
                         {
                           title: 'Teaching Assistant',
                           company: 'Northeastern University',
                           date: 'Sept 2024 - Present',
-                          description: 'Guided students through complex topics relating to graph theory, recurrence, logic, and sorting algorithms in office hours. Led Java-based labs for groups of 20 students and developed review sessions to reinforce key concepts.',
+                          description: 'Guide students through complex topics relating to graph theory, recurrence, logic, and sorting algorithms in office hours. Lead Java-based labs for groups of 20 students and develop review sessions to reinforce key concepts. Grade student exams and collobarate with faculty to refine course material and address common student challenges',
+                        },
+                        {
+                          title: 'Software Engineer',
+                          company: 'Take2',
+                          date: 'May 2024 - Aug 2024',
+                          description: 'Integrated key frontend features for a mobile app using React-Native, including profiles, posts, followers, and infinite pages. Enhanced backend functionality with Firebase NoSQL to support CRUD operations on user lists and increase scalability. Optimized client-server communication through pagination, API batch updates, lazy loading, and caching resulting in a 30% reduction in network latency.',
                         },
                         {
                           title: 'Graphic Design and Social Media Intern',
                           company: 'FOR THE GOOD FIGHT INC',
                           date: 'May 2023 - Aug 2023',
-                          description: 'Spearheaded the development of visually pleasing graphic designs for an e-commerce apparel store using Canva. Coordinated with team members to ensure cohesive and impactful brand representation online (Instagram, Pinterest, Etsy)',
+                          description: 'Designed and prototyped engaging graphic designs for an e-commerce apparel store using Canva. Colloborated with team to maintain consistent and effective brand representation online (Instagram, Pinterest, Etsy).',
                         },
                       ].map((job, index) => (
                         <motion.div
@@ -254,13 +257,19 @@ export default function Portfolio() {
                           initial={{ opacity: 0, x: -50 }}
                           whileInView={{ opacity: 1, x: 0 }}
                           viewport={{ once: false }}
-                          transition={{ duration: 0.5, delay: index * 0.1 }}
-                          className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
+                          transition={{ duration: 0.6 }}
+                          className="bg-black/40 p-6 rounded-lg
+                                    shadow-[0_0_20px_rgba(127,179,213,0.15)]
+                                    hover:shadow-[0_0_25px_rgba(127,179,213,0.25)]
+                                    backdrop-blur-sm
+                                    border border-cosmic-accent/20
+                                    hover:border-cosmic-accent/40
+                                    hover:transform hover:scale-[1.02]"
                         >
-                          <h3 className="text-2xl font-semibold mb-2">{job.title}</h3>
-                          <p className="text-blue-400 mb-2">{job.company}</p>
-                          <p className="text-sm text-gray-400 mb-4">{job.date}</p>
-                          <p>{job.description}</p>
+                          <h3 className="text-2xl font-semibold mb-2 text-white">{job.title}</h3>
+                          <p className="text-cosmic-accent mb-2">{job.company}</p>
+                          <p className="text-sm text-white/70 mb-4">{job.date}</p>
+                          <p className="text-white/90">{job.description}</p>
                         </motion.div>
                       ))}
                     </div>
@@ -268,7 +277,7 @@ export default function Portfolio() {
                 </div>
               </section>
 
-              <section id="projects" className="py-20 bg-black/30 backdrop-blur-sm">
+              <section id="projects" className="py-20 bg-cosmic-dark/30 backdrop-blur-sm">
                 <div className="container mx-auto px-6">
                   <motion.div
                     initial={{ opacity: 0, y: 50 }}
@@ -276,18 +285,23 @@ export default function Portfolio() {
                     viewport={{ once: false, margin: "-100px" }}
                     transition={{ duration: 0.6 }}
                   >
-                    <h2 className="text-4xl font-bold mb-8">Projects</h2>
+                    <h2 className="text-4xl font-bold mb-8 text-white">Projects</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                       {[
                         {
-                          title: 'CO-OP CONNECT',
-                          description: 'Created a web app to help students find affordable housing and connect with others in those areas.',
-                          tech: ['Python', 'Flask', 'MySQL', 'Streamlit'],
+                          title: 'Personal Website',
+                          description: 'Created this website to showcase my skills, experiences, and who I am. Implemented interactive animations with Framer Motion, leveraged TypeScript for type safety and scalability, and utilized Three.js\'s PerspectiveCamera for 3D particle effects.',
+                          tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Three.js'],
                         },
                         {
-                          title: 'FINNOVATE',
-                          description: 'Developed a fintech product for budgeting and managing credit scores.',
-                          tech: ['Market Research', 'Product Development', 'Pitch Presentation'],
+                          title: 'CO-OP CONNECT',
+                          description: 'Designed a web app to help students find affordable housing and to connect them with other students nearby. Implemented the backend using a MySQL database, and created a REST API with Python + Flask as a data accessing layer. Built a UI with heatmaps and querying capabilities using the Streamlit framework and realistic Mockaroo-generated data.',
+                          tech: ['Python', 'Flask', 'MySQL', 'Rest API', 'Streamlit'],
+                        },
+                        {
+                          title: 'DISRUPT NEU',
+                          description: 'Led an 8-week venture teaching students to prototype fintech products, culminating with a chance to win $5,000 in a pitch to investors. Introduced students to the fintech world, walking them through idea creation, idea validation, prototyping, and presentation. Networked with guest speakers and invited people from various companies (Claim, Toast, Fidelity, etc) to come present.',
+                          tech: ['Market Research', 'Product Development', 'Pitch Presentation', 'Leadership'],
                         },
                       ].map((project, index) => (
                         <motion.div
@@ -295,14 +309,22 @@ export default function Portfolio() {
                           initial={{ opacity: 0, scale: 0.8 }}
                           whileInView={{ opacity: 1, scale: 1 }}
                           viewport={{ once: false }}
-                          transition={{ duration: 0.5, delay: index * 0.1 }}
-                          className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
+                          transition={{ duration: 0.6 }}
+                          className="bg-black/40 p-6 rounded-lg
+                                    shadow-[0_0_20px_rgba(127,179,213,0.15)]
+                                    hover:shadow-[0_0_25px_rgba(127,179,213,0.25)]
+                                    backdrop-blur-sm
+                                    border border-cosmic-accent/20
+                                    hover:border-cosmic-accent/40 
+                                    hover:transform hover:scale-[1.02]"
                         >
-                          <h3 className="text-2xl font-semibold mb-2">{project.title}</h3>
-                          <p className="mb-4">{project.description}</p>
+                          <h3 className="text-2xl font-semibold mb-2 text-white">{project.title}</h3>
+                          <p className="mb-4 text-white/90">{project.description}</p>
                           <div className="flex flex-wrap gap-2">
                             {project.tech.map((tech, techIndex) => (
-                              <span key={techIndex} className="bg-blue-500 text-white text-xs px-2 py-1 rounded">
+                              <span key={techIndex} 
+                                    className="bg-cosmic-primary/20 text-cosmic-light px-2 py-1 rounded-md
+                                             border border-cosmic-accent/20 text-sm">
                                 {tech}
                               </span>
                             ))}
@@ -314,7 +336,7 @@ export default function Portfolio() {
                 </div>
               </section>
 
-              <section id="education" className="py-20 bg-black/20 backdrop-blur-sm">
+              <section id="education" className="py-20 bg-cosmic-dark/20 backdrop-blur-sm">
                 <div className="container mx-auto px-6">
                   <motion.div
                     initial={{ opacity: 0, y: 50 }}
@@ -322,19 +344,25 @@ export default function Portfolio() {
                     viewport={{ once: false, margin: "-100px" }}
                     transition={{ duration: 0.6 }}
                   >
-                    <h2 className="text-4xl font-bold mb-8">Education</h2>
+                    <h2 className="text-4xl font-bold mb-8 text-white">Education</h2>
                     <motion.div
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
+                      initial={{ opacity: 0, y: 50 }}
+                      whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: false }}
-                      transition={{ duration: 0.5 }}
-                      className="bg-gray-800 p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow"
+                      transition={{ duration: 0.6 }}
+                      className="bg-black/40 p-6 rounded-lg
+                                shadow-[0_0_20px_rgba(127,179,213,0.15)]
+                                hover:shadow-[0_0_25px_rgba(127,179,213,0.25)]
+                                backdrop-blur-sm
+                                border border-cosmic-accent/20
+                                hover:border-cosmic-accent/40 
+                                hover:transform hover:scale-[1.02]"
                     >
-                      <h3 className="text-2xl font-semibold mb-2">Northeastern University</h3>
-                      <p className="text-blue-400 mb-2">Khoury College of Computer Sciences</p>
-                      <p className="text-sm text-gray-400 mb-4">Sept 2023 - May 2027</p>
-                      <p>Major: Computer Science | GPA: 3.92 | Dean's List</p>
-                      <p className="mt-2">
+                      <h3 className="text-2xl font-semibold mb-2 text-white">Northeastern University</h3>
+                      <p className="text-cosmic-accent mb-2">Khoury College of Computer Sciences</p>
+                      <p className="text-sm text-white/70 mb-4">Sept 2023 - May 2027</p>
+                      <p className="text-white/90">Major: Computer Science | GPA: 3.92 | Dean's List</p>
+                      <p className="mt-2 text-white/90">
                         Relevant Coursework: Discrete Structures, Foundations of Cybersecurity, Object Oriented Design, Algorithms and Data, Database Design, Machine Learning and Data Mining, Computer Systems
                       </p>
                     </motion.div>
@@ -342,7 +370,7 @@ export default function Portfolio() {
                 </div>
               </section>
 
-              <section id="contact" className="py-20 bg-black/20 backdrop-blur-sm">
+              <section id="contact" className="py-20 bg-cosmic-dark/20 backdrop-blur-sm">
                 <div className="container mx-auto px-6">
                   <motion.div
                     initial={{ opacity: 0, y: 50 }}
@@ -350,84 +378,129 @@ export default function Portfolio() {
                     viewport={{ once: false, margin: "-100px" }}
                     transition={{ duration: 0.6 }}
                   >
-                    <h2 className="text-4xl font-bold mb-8">Let's Connect</h2>
+                    <h2 className="text-4xl font-bold mb-8 text-white">Let's Connect</h2>
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: false }}
                       transition={{ duration: 0.5 }}
-                      className="bg-gray-800/50 p-8 rounded-lg shadow-lg backdrop-blur-sm"
+                      className="bg-black/40 p-6 rounded-lg
+                                shadow-[0_0_20px_rgba(127,179,213,0.15)]
+                                hover:shadow-[0_0_25px_rgba(127,179,213,0.25)]
+                                backdrop-blur-sm
+                                border border-cosmic-accent/20
+                                hover:border-cosmic-accent/40 
+                                hover:transform hover:scale-[1.02]"
                     >
-                      <p className="text-xl mb-8">
+                      <p className="text-xl mb-8 text-white">
                         I'm always excited to connect with fellow developers, potential collaborators, 
                         and industry professionals. Whether you have a question, want to discuss a project, 
                         or just want to say hello, feel free to reach out!
                       </p>
-                      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                      {[
+                        { href: "mailto:tejchak04@gmail.com", icon: Mail, text: "Email Me" },
+                        { href: "https://www.linkedin.com/in/tejchakravarthy/", icon: Linkedin, text: "Connect on LinkedIn" },
+                        { href: "https://github.com/Tejchak", icon: GitHub, text: "Check My GitHub" },
+                        { href: "https://outlook.office.com/bookwithme/user/c74682626214455abcbf8db28ad004f9@northeastern.edu?anonymous&ep=plink", 
+                          icon: Calendar, text: "Schedule a Meeting" }
+                      ].map((item, index) => (
                         <motion.a
-                          href="mailto:tejchak04@gmail.com"
+                          key={index}
+                          href={item.href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center justify-center gap-3 bg-gray-700/50 hover:bg-gray-600/50 
-                            transition-colors p-4 rounded-lg group"
-                          whileHover={{ scale: 1.02 }}
-                          whileTap={{ scale: 0.98 }}
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: false }}
+                          transition={{ duration: 0.5, delay: index * 0.1 }}
+                          className="flex items-center justify-center gap-3 
+                                    bg-black/40 p-4 rounded-lg group
+                                    shadow-[0_0_20px_rgba(127,179,213,0.15)]
+                                    hover:shadow-[0_0_25px_rgba(127,179,213,0.25)]
+                                    backdrop-blur-sm
+                                    border border-cosmic-accent/20
+                                    hover:border-cosmic-accent/40 
+                                    transition-all duration-300
+                                    hover:transform hover:scale-[1.02]"
                         >
-                          <Mail className="text-blue-400 group-hover:text-blue-300" />
-                          <span>Email Me</span>
+                          <item.icon className="text-cosmic-light group-hover:text-cosmic-glow" />
+                          <span className="text-white">{item.text}</span>
                         </motion.a>
-                        
-                        <motion.a
-                          href="https://www.linkedin.com/in/tej-chakravarthy-3b37132a2/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-center gap-3 bg-gray-700/50 hover:bg-gray-600/50 
-                            transition-colors p-4 rounded-lg group"
-                          whileHover={{ scale: 1.02 }}
-                          whileTap={{ scale: 0.98 }}
-                        >
-                          <Linkedin className="text-blue-400 group-hover:text-blue-300" />
-                          <span>Connect on LinkedIn</span>
-                        </motion.a>
-
-                        <motion.a
-                          href="https://github.com/Tejchak"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-center gap-3 bg-gray-700/50 hover:bg-gray-600/50 
-                            transition-colors p-4 rounded-lg group"
-                          whileHover={{ scale: 1.02 }}
-                          whileTap={{ scale: 0.98 }}
-                        >
-                          <GitHub className="text-blue-400 group-hover:text-blue-300" />
-                          <span>Reach My GitHub</span>
-                        </motion.a>
-
-                        <motion.a
-                          href="https://outlook.office.com/bookwithme/user/c74682626214455abcbf8db28ad004f9@northeastern.edu?anonymous&ep=plink"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-center gap-3 bg-gray-700/50 hover:bg-gray-600/50 
-                            transition-colors p-4 rounded-lg group"
-                          whileHover={{ scale: 1.02 }}
-                          whileTap={{ scale: 0.98 }}
-                        >
-                          <Calendar className="text-blue-400 group-hover:text-blue-300" />
-                          <span>Schedule a Meeting</span>
-                        </motion.a>
-                      </div>
+                      ))}
+                    </div>
                     </motion.div>
                   </motion.div>
                 </div>
               </section>
 
-              <footer className="bg-black/40 backdrop-blur-md text-center py-6">
-                <div className="flex flex-col items-center gap-4">
-                  <p>&copy; 2024 Tej Chakravarthy. All rights reserved.</p>
+              <footer className="bg-cosmic-dark/90 backdrop-blur-md text-white py-12">
+                <div className="container mx-auto px-6">
+                  <motion.div
+                    className="flex flex-col items-center justify-center text-center"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: false }}
+                  >
+                    
+                    <motion.div
+                      className="flex space-x-4 mb-8"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.2 }}
+                      viewport={{ once: false }}
+                    >
+                      <motion.a
+                        href="https://github.com/Tejchak"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 bg-cosmic-primary text-cosmic-light rounded-full 
+                                  hover:bg-cosmic-accent transition-all duration-300
+                                  border border-transparent hover:border-cosmic-glow"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                      >
+                        <GitHub size={20} />
+                      </motion.a>
+                      <motion.a
+                        href="https://www.linkedin.com/in/tejchakravarthy/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="p-2 bg-cosmic-primary text-cosmic-light rounded-full 
+                                  hover:bg-cosmic-accent transition-all duration-300
+                                  border border-transparent hover:border-cosmic-glow"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                      >
+                        <Linkedin size={20} />
+                      </motion.a>
+                      <motion.a
+                        href="mailto:tejchak04@gmail.com"
+                        className="p-2 bg-cosmic-primary text-cosmic-light rounded-full 
+                                  hover:bg-cosmic-accent transition-all duration-300
+                                  border border-transparent hover:border-cosmic-glow"
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                      >
+                        <Mail size={20} />
+                      </motion.a>
+                    </motion.div>
+                    
+                    <motion.p
+                      className="text-cosmic-light/70 text-sm"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.4 }}
+                      viewport={{ once: false }}
+                    >
+                      &copy; {new Date().getFullYear()} Tej Chakravarthy. All rights reserved.
+                    </motion.p>
+                  </motion.div>
                 </div>
               </footer>
 
-              {/* Always show button but change direction based on section */}
+              {/* Scroll Button */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -435,7 +508,9 @@ export default function Portfolio() {
               >
                 <motion.button
                   onClick={() => scrollToSection(activeSection === 'home' ? 'experience' : 'home')}
-                  className="bg-blue-500 text-white p-3 rounded-full shadow-lg hover:bg-blue-600 transition-colors"
+                  className="bg-cosmic-primary text-cosmic-light p-3 rounded-full shadow-lg 
+                            hover:bg-cosmic-accent transition-all duration-300
+                            border border-transparent hover:border-cosmic-glow"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >
