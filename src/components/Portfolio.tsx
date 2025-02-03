@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence, useScroll, useTransform, useInView } from 'framer-motion'
-import { ChevronDown, GitlabIcon as GitHub, Linkedin, Mail, Calendar } from 'lucide-react'
+import { ChevronDown, GitlabIcon as GitHub, Linkedin, Mail, Calendar, ExternalLink } from 'lucide-react'
 import { TypeAnimation } from 'react-type-animation'
 import * as THREE from 'three'
 
@@ -289,8 +289,14 @@ export default function Portfolio() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                       {[
                         {
+                          title: 'FinovaAI',
+                          description: 'Deployed an AI web app that provides financial advice, generates Python, and engages in natural conversations. Developed user authentication and chat storage using Supabase with SQL. Engineered the backend with API integrations, including OpenAI and Yahoo Finance.',
+                          tech: ['Next.js', 'React', 'Supabase', 'SQL', 'Langflow', 'OpenAI', 'Yahoo Finance'],
+                          link: 'https://tej-ai.vercel.app/'
+                        },
+                        {
                           title: 'Personal Website',
-                          description: 'Created this website to showcase my skills, experiences, and who I am. Implemented interactive animations with Framer Motion, leveraged TypeScript for type safety and scalability, and utilized Three.js\'s PerspectiveCamera for 3D particle effects.',
+                          description: 'Created this website to showcase my skills, experiences, and who I am. Implemented interactive animations with Framer Motion. Leveraged TypeScript for type safety and scalability, and utilized Three.js\'s PerspectiveCamera for 3D particle effects.',
                           tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Three.js'],
                         },
                         {
@@ -320,7 +326,7 @@ export default function Portfolio() {
                         >
                           <h3 className="text-2xl font-semibold mb-2 text-white">{project.title}</h3>
                           <p className="mb-4 text-white/90">{project.description}</p>
-                          <div className="flex flex-wrap gap-2">
+                          <div className="flex flex-wrap gap-2 mb-2">
                             {project.tech.map((tech, techIndex) => (
                               <span key={techIndex} 
                                     className="bg-cosmic-primary/20 text-cosmic-light px-2 py-1 rounded-md
@@ -329,6 +335,25 @@ export default function Portfolio() {
                               </span>
                             ))}
                           </div>
+                          {project.link && (
+                            <motion.a
+                              href={project.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 px-4 py-1
+                                       bg-cosmic-primary/20 text-cosmic-light
+                                       hover:bg-cosmic-primary/30 
+                                       border border-cosmic-accent/40
+                                       hover:border-cosmic-accent 
+                                       rounded-md transition-all duration-300
+                                       text-sm font-medium"
+                              whileHover={{ scale: 1.05 }}
+                              whileTap={{ scale: 0.95 }}
+                            >
+                              <ExternalLink size={16} />
+                              Live Demo
+                            </motion.a>
+                          )}
                         </motion.div>
                       ))}
                     </div>
