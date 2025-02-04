@@ -290,7 +290,7 @@ export default function Portfolio() {
                       {[
                         {
                           title: 'FinovaAI',
-                          description: 'Deployed an AI web app that provides financial advice, generates Python, and engages in natural conversations. Developed user authentication and chat storage using Supabase with SQL. Engineered the backend with API integrations, including OpenAI and Yahoo Finance.',
+                          description: 'Deployed an AI that provides financial advice, generates Python, and engages in natural conversations. Developed user authentication and chat storage using Supabase with SQL. Engineered the backend with OpenAI, Yahoo Finance, and Wikipedia APIs.',
                           tech: ['Next.js', 'React', 'Supabase', 'SQL', 'Langflow', 'OpenAI', 'Yahoo Finance'],
                           link: 'https://tej-ai.vercel.app/'
                         },
