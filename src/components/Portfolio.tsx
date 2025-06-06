@@ -234,6 +234,12 @@ export default function Portfolio() {
                     <div className="space-y-8">
                       {[
                         {
+                          title: 'Software Engineering Co-op (Backend)',
+                          company: 'Priceline.com',
+                          date: 'June 2025 - Present',
+                          description: 'Developing customer identity microservices using Java Spring framework and integrating with Okta authentication APIs to streamline user identity management. Leading migration initiatives from legacy authentication systems to modern cloud-based (GKE) solutions.',
+                        },
+                        {
                           title: 'Teaching Assistant',
                           company: 'Northeastern University',
                           date: 'Sept 2024 - Present',
@@ -289,15 +295,15 @@ export default function Portfolio() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                       {[
                         {
+                          title: 'FUSE Filesystem',
+                          description: 'Created a 1MB custom FUSE filesystem in C with core file operations (create, read, write, delete, rename), nested directories, and support for files up to 500KB in size using indirect block addressing. Designed a bitmap-based block allocation system with 4KB blocks, supporting 100+ small files.',
+                          tech: ['C', 'Linux Kernel', 'FUSE', 'File Systems'],
+                        },
+                        {
                           title: 'FinovaAI',
                           description: 'Deployed an AI web app with OpenAI, Wikipedia, and Yahoo Finance APIs for NLP, data retrieval, and market analysis. Designed a PostgreSQL database to store chat history and used Supabase for User Authentication.',
                           tech: [ 'Supabase', 'SQL', 'Langflow', 'OpenAI', 'Yahoo Finance', 'Next.js', 'React'],
                           link: 'https://tej-ai.vercel.app/'
-                        },
-                        {
-                          title: 'Personal Website',
-                          description: 'Created this website to showcase my skills, experiences, and who I am. Implemented interactive animations with Framer Motion. Leveraged TypeScript for type safety and scalability, and utilized Three.js\'s PerspectiveCamera for 3D particle effects.',
-                          tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Three.js'],
                         },
                         {
                           title: 'CO-OP CONNECT',
