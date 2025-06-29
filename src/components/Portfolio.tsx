@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence, useScroll, useTransform, useInView } from 'framer-motion'
-import { ChevronDown, GitlabIcon as GitHub, Linkedin, Mail, Calendar, ExternalLink } from 'lucide-react'
+import { ChevronDown, GitlabIcon as GitHub, Linkedin, Mail, Calendar, ExternalLink, Database, Leaf, Server, Flame, Circle, Code2, FileCode, Ruler, FileText, Cloud, Terminal, Settings, Wrench, Globe, TabletSmartphone } from 'lucide-react'
 import { TypeAnimation } from 'react-type-animation'
 import * as THREE from 'three'
 
@@ -251,12 +251,6 @@ export default function Portfolio() {
                           date: 'May 2024 - Aug 2024',
                           description: 'Integrated key frontend features for a mobile app using React-Native, including profiles, posts, followers, and infinite pages. Enhanced backend functionality with Firebase NoSQL to support CRUD operations on user lists and increase scalability. Optimized client-server communication through pagination, API batch updates, lazy loading, and caching resulting in a 30% reduction in network latency.',
                         },
-                        {
-                          title: 'Graphic Design and Social Media Intern',
-                          company: 'FOR THE GOOD FIGHT INC',
-                          date: 'May 2023 - Aug 2023',
-                          description: 'Designed and prototyped engaging graphic designs for an e-commerce apparel store using Canva. Colloborated with team to maintain consistent and effective brand representation online (Instagram, Pinterest, Etsy).',
-                        },
                       ].map((job, index) => (
                         <motion.div
                           key={index}
@@ -295,6 +289,11 @@ export default function Portfolio() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                       {[
                         {
+                          title: 'PropertyPurpose',
+                          description: 'Deployed Real Estate web app using VPC with subnet separation, placing EC2 backend in public subnet and RDS database in private subnet for enhanced security. Integrated multiple AWS services including API Gateway for RESTful endpoints, S3 for image storage with automated uploads, and AWS Cognito for authentication.',
+                          tech: ['Node.js', 'Express.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'PostGIS', 'AWS'],
+                        },
+                        {
                           title: 'FUSE Filesystem',
                           description: 'Created a 1MB custom FUSE filesystem in C with core file operations (create, read, write, delete, rename), nested directories, and support for files up to 500KB in size using indirect block addressing. Designed a bitmap-based block allocation system with 4KB blocks, supporting 100+ small files.',
                           tech: ['C', 'Linux Kernel', 'FUSE', 'File Systems'],
@@ -303,7 +302,6 @@ export default function Portfolio() {
                           title: 'FinovaAI',
                           description: 'Deployed an AI web app with OpenAI, Wikipedia, and Yahoo Finance APIs for NLP, data retrieval, and market analysis. Designed a PostgreSQL database to store chat history and used Supabase for User Authentication.',
                           tech: [ 'Supabase', 'SQL', 'Langflow', 'OpenAI', 'Yahoo Finance', 'Next.js', 'React'],
-                          link: 'https://tej-ai.vercel.app/'
                         },
                         {
                           title: 'CO-OP CONNECT',
@@ -341,9 +339,9 @@ export default function Portfolio() {
                               </span>
                             ))}
                           </div>
-                          {project.link && (
+                          {(project as any).link && (
                             <motion.a
-                              href={project.link}
+                              href={(project as any).link}
                               target="_blank"
                               rel="noopener noreferrer"
                               className="inline-flex items-center gap-2 px-4 py-1
