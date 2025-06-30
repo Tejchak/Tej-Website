@@ -274,8 +274,8 @@ export default function Portfolio() {
                         {
                           title: 'Software Engineering Co-op (Backend)',
                           company: 'Priceline.com',
-                          date: 'June 2025 - Present',
-                          description: 'Developing customer identity microservices using Java Spring framework and integrating with Okta authentication APIs to streamline user identity management. Leading migration initiatives from legacy authentication systems to modern cloud-based (GKE) solutions.',
+                          date: 'Present',
+                          description: 'N/A',
                         },
                         {
                           title: 'Teaching Assistant',
