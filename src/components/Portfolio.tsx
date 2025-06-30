@@ -6,12 +6,50 @@ import { ChevronDown, GitlabIcon as GitHub, Linkedin, Mail, Calendar, ExternalLi
 import { TypeAnimation } from 'react-type-animation'
 import * as THREE from 'three'
 
+// Define a Project type
+type Project = {
+  title: string;
+  description: string;
+  tech: string[];
+  link?: string;
+};
+
 export default function Portfolio() {
   const [isVisible, setIsVisible] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const { scrollYProgress } = useScroll()
   const backgroundOpacity = useTransform(scrollYProgress, [0, 1], [0.5, 0.8])
+
+  // Projects array at the top of the component
+  const projects: Project[] = [
+    {
+      title: 'PropertyPurpose',
+      description: 'Deployed Real Estate web app using VPC with subnet separation, placing EC2 backend in public subnet and RDS database in private subnet for enhanced security. Integrated multiple AWS services including API Gateway for RESTful endpoints, S3 for image storage with automated uploads, and AWS Cognito for authentication.',
+      tech: ['Node.js', 'Express.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'PostGIS', 'AWS'],
+    },
+    {
+      title: 'FUSE Filesystem',
+      description: 'Created a 1MB custom FUSE filesystem in C with core file operations (create, read, write, delete, rename), nested directories, and support for files up to 500KB in size using indirect block addressing. Designed a bitmap-based block allocation system with 4KB blocks, supporting 100+ small files.',
+      tech: ['C', 'Linux Kernel', 'FUSE', 'File Systems'],
+    },
+    {
+      title: 'FinovaAI',
+      description: 'Deployed an AI web app with OpenAI, Wikipedia, and Yahoo Finance APIs for NLP, data retrieval, and market analysis. Designed a PostgreSQL database to store chat history and used Supabase for User Authentication.',
+      tech: [ 'Supabase', 'SQL', 'Langflow', 'OpenAI', 'Yahoo Finance', 'Next.js', 'React'],
+      link: 'https://tej-ai.vercel.app/',
+    },
+    {
+      title: 'CO-OP CONNECT',
+      description: 'Designed a web app to help students find affordable housing and to connect them with other students nearby. Implemented the backend using a MySQL database, and created a REST API with Python + Flask as a data accessing layer. Built a UI with heatmaps and querying capabilities using the Streamlit framework and realistic Mockaroo-generated data.',
+      tech: ['Python', 'Flask', 'MySQL', 'Rest API', 'Streamlit'],
+    },
+    {
+      title: 'DISRUPT NEU',
+      description: 'Led an 8-week venture teaching students to prototype fintech products, culminating with a chance to win $5,000 in a pitch to investors. Introduced students to the fintech world, walking them through idea creation, idea validation, prototyping, and presentation. Networked with guest speakers and invited people from various companies (Claim, Toast, Fidelity, etc) to come present.',
+      tech: ['Market Research', 'Product Development', 'Pitch Presentation', 'Leadership'],
+    },
+  ];
 
   useEffect(() => {
     setIsVisible(true)
@@ -287,33 +325,7 @@ export default function Portfolio() {
                   >
                     <h2 className="text-4xl font-bold mb-8 text-white">Projects</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                      {[
-                        {
-                          title: 'PropertyPurpose',
-                          description: 'Deployed Real Estate web app using VPC with subnet separation, placing EC2 backend in public subnet and RDS database in private subnet for enhanced security. Integrated multiple AWS services including API Gateway for RESTful endpoints, S3 for image storage with automated uploads, and AWS Cognito for authentication.',
-                          tech: ['Node.js', 'Express.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'PostGIS', 'AWS'],
-                        },
-                        {
-                          title: 'FUSE Filesystem',
-                          description: 'Created a 1MB custom FUSE filesystem in C with core file operations (create, read, write, delete, rename), nested directories, and support for files up to 500KB in size using indirect block addressing. Designed a bitmap-based block allocation system with 4KB blocks, supporting 100+ small files.',
-                          tech: ['C', 'Linux Kernel', 'FUSE', 'File Systems'],
-                        },
-                        {
-                          title: 'FinovaAI',
-                          description: 'Deployed an AI web app with OpenAI, Wikipedia, and Yahoo Finance APIs for NLP, data retrieval, and market analysis. Designed a PostgreSQL database to store chat history and used Supabase for User Authentication.',
-                          tech: [ 'Supabase', 'SQL', 'Langflow', 'OpenAI', 'Yahoo Finance', 'Next.js', 'React'],
-                        },
-                        {
-                          title: 'CO-OP CONNECT',
-                          description: 'Designed a web app to help students find affordable housing and to connect them with other students nearby. Implemented the backend using a MySQL database, and created a REST API with Python + Flask as a data accessing layer. Built a UI with heatmaps and querying capabilities using the Streamlit framework and realistic Mockaroo-generated data.',
-                          tech: ['Python', 'Flask', 'MySQL', 'Rest API', 'Streamlit'],
-                        },
-                        {
-                          title: 'DISRUPT NEU',
-                          description: 'Led an 8-week venture teaching students to prototype fintech products, culminating with a chance to win $5,000 in a pitch to investors. Introduced students to the fintech world, walking them through idea creation, idea validation, prototyping, and presentation. Networked with guest speakers and invited people from various companies (Claim, Toast, Fidelity, etc) to come present.',
-                          tech: ['Market Research', 'Product Development', 'Pitch Presentation', 'Leadership'],
-                        },
-                      ].map((project, index) => (
+                      {projects.map((project, index) => (
                         <motion.div
                           key={index}
                           initial={{ opacity: 0, scale: 0.8 }}
@@ -339,9 +351,9 @@ export default function Portfolio() {
                               </span>
                             ))}
                           </div>
-                          {(project as any).link && (
+                          {project.link && (
                             <motion.a
-                              href={(project as any).link}
+                              href={project.link}
                               target="_blank"
                               rel="noopener noreferrer"
                               className="inline-flex items-center gap-2 px-4 py-1
@@ -390,7 +402,7 @@ export default function Portfolio() {
                       <h3 className="text-2xl font-semibold mb-2 text-white">Northeastern University</h3>
                       <p className="text-cosmic-accent mb-2">Khoury College of Computer Sciences</p>
                       <p className="text-sm text-white/70 mb-4">Sept 2023 - May 2027</p>
-                      <p className="text-white/90">Major: Computer Science | GPA: 3.91 | Dean's List</p>
+                      <p className="text-white/90">Major: Computer Science | GPA: 3.9 | Dean's List</p>
                       <p className="mt-2 text-white/90">
                       Relevant Coursework: Object Oriented Design, Algorithms and Data, Computer Systems, Machine Learning and Data Mining, Database Design, Discrete Structures, Foundations of Cybersecurity
                       </p>
