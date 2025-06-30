@@ -49,6 +49,11 @@ export default function Portfolio() {
       description: 'Led an 8-week venture teaching students to prototype fintech products, culminating with a chance to win $5,000 in a pitch to investors. Introduced students to the fintech world, walking them through idea creation, idea validation, prototyping, and presentation. Networked with guest speakers and invited people from various companies (Claim, Toast, Fidelity, etc) to come present.',
       tech: ['Market Research', 'Product Development', 'Pitch Presentation', 'Leadership'],
     },
+    {
+      title: 'Personal Website',
+      description: "Created this website to showcase my skills, experiences, and who I am. Implemented interactive animations with Framer Motion. Leveraged TypeScript for type safety and scalability, and utilized Three.js's PerspectiveCamera for 3D particle effects.",
+      tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Three.js'],
+    },
   ];
 
   useEffect(() => {
@@ -275,12 +280,12 @@ export default function Portfolio() {
                           title: 'Software Engineering Co-op (Backend)',
                           company: 'Priceline.com',
                           date: 'Present',
-                          description: 'N/A',
+                          description: 'Developing customer identity microservices using Java Spring framework and integrating with Okta authentication APIs to streamline user identity management. Leading migration initiatives from legacy authentication systems to modern cloud-based (GKE) solutions.',
                         },
                         {
                           title: 'Teaching Assistant',
                           company: 'Northeastern University',
-                          date: 'Sept 2024 - Present',
+                          date: 'Sept 2024 - May 2025',
                           description: 'Guide students through complex topics relating to graph theory, recurrence, logic, and sorting algorithms in office hours. Lead Java-based labs for groups of 20 students and develop review sessions to reinforce key concepts. Grade student exams and collobarate with faculty to refine course material and address common student challenges',
                         },
                         {
