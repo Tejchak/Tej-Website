@@ -289,10 +289,10 @@ export default function Portfolio() {
                           description: 'Guide students through complex topics relating to graph theory, recurrence, logic, and sorting algorithms in office hours. Lead Java-based labs for groups of 20 students and develop review sessions to reinforce key concepts. Grade student exams and collobarate with faculty to refine course material and address common student challenges',
                         },
                         {
-                          title: 'Software Engineer Intern',
+                          title: 'Software Engineer',
                           company: 'Take2',
                           date: 'May 2024 - Aug 2024',
-                          description: 'Integrated key frontend features for a mobile app using React-Native, including profiles, posts, followers, and infinite pages. Enhanced backend functionality with Firebase NoSQL to support CRUD operations on user lists and increase scalability. Optimized client-server communication through pagination, API batch updates, lazy loading, and caching resulting in a 30% reduction in network latency.',
+                          description: 'Contributed to mobile app development using React-Native frontend and NoSQL backend, leading to a 30% reduction in network latency through efficient data caching and API optimization. Integrated AWS CloudWatch for real-time logging and performance monitoring across backend services. Implemented serverless infrastructure using AWS Lambda, ensuring accurate, real-time data consistency.',
                         },
                       ].map((job, index) => (
                         <motion.div
