@@ -27,6 +27,7 @@ export default function Portfolio() {
       title: 'PropertyPurpose',
       description: 'Deployed Real Estate web app using VPC with subnet separation, placing EC2 backend in public subnet and RDS database in private subnet for enhanced security. Integrated multiple AWS services including API Gateway for RESTful endpoints, S3 for image storage with automated uploads, and AWS Cognito for authentication.',
       tech: ['Node.js', 'Express.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'PostGIS', 'AWS'],
+      link: 'https://main.d19lrmdt5o1evc.amplifyapp.com/',
     },
     {
       title: 'FUSE Filesystem',
