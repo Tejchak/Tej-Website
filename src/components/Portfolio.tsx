@@ -38,7 +38,6 @@ export default function Portfolio() {
       title: 'FinovaAI',
       description: 'Deployed an AI web app with OpenAI, Wikipedia, and Yahoo Finance APIs for NLP, data retrieval, and market analysis. Designed a PostgreSQL database to store chat history and used Supabase for User Authentication.',
       tech: [ 'Supabase', 'SQL', 'Langflow', 'OpenAI', 'Yahoo Finance', 'Next.js', 'React'],
-      link: 'https://tej-ai.vercel.app/',
     },
     {
       title: 'CO-OP CONNECT',
@@ -293,7 +292,7 @@ export default function Portfolio() {
                           title: 'Software Engineer',
                           company: 'Take2',
                           date: 'May 2024 - Aug 2024',
-                          description: 'Contributed to mobile app development using React-Native frontend and NoSQL backend, leading to a 30% reduction in network latency through efficient data caching and API optimization. Integrated AWS CloudWatch for real-time logging and performance monitoring across backend services. Implemented serverless infrastructure using AWS Lambda, ensuring accurate, real-time data consistency.',
+                          description: 'Contributed to mobile app development using React-Native frontend and NoSQL backend, leading to a 30% reduction in network latency through efficient data caching and API optimization. Integrated Google Cloud Logging for real-time logging and performance monitoring across backend services. Implemented serverless infrastructure using Google Cloud Functions, ensuring accurate, real-time data consistency while minimizing backend maintenance by 27%.',
                         },
                       ].map((job, index) => (
                         <motion.div
