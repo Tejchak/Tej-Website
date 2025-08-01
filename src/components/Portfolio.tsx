@@ -279,20 +279,21 @@ export default function Portfolio() {
                         {
                           title: 'Software Engineering Co-op (Backend)',
                           company: 'Priceline.com',
-                          date: 'Present',
-                          description: 'Developing customer identity microservices using Java Spring framework and integrating with Okta authentication APIs to streamline user identity management. Leading migration initiatives from legacy authentication systems to modern cloud-based (GKE) solutions.',
+                          date: 'June 2025 – Present',
+                          description: 'Developing hotel booking microservices using Java Spring Boot framework on GCP Kubernetes clusters. Building real-time ghost booking detection system using Kafka consumers to identify booking state mismatches between Priceline and GDS systems, automatically canceling orphaned reservations to ensure data consistency. Optimizing database queries using Spring Data JPA with Google Cloud Spanner and implementing caching layers with Google Bigtable to reduce response times.',
+                        },
+                        {
+                          title: 'Software Engineering Co-Founder',
+                          company: 'Take2 Movies and Shows',
+                          date: 'May 2024 – Present',
+                          description: 'Architected and deployed a cross-platform social media app using React Native/TypeScript—now live on the iOS App Store with 500+ active users. Integrated Google Cloud Logging for real-time logging and performance monitoring across backend services. Implemented serverless infrastructure using Google Cloud Functions, ensuring accurate, real-time data consistency while minimizing backend maintenance by 27%.',
+                          link: 'https://apps.apple.com/us/app/take2-movies-shows/id6737178731',
                         },
                         {
                           title: 'Teaching Assistant',
                           company: 'Northeastern University',
                           date: 'Sept 2024 - May 2025',
                           description: 'Guide students through complex topics relating to graph theory, recurrence, logic, and sorting algorithms in office hours. Lead Java-based labs for groups of 20 students and develop review sessions to reinforce key concepts. Grade student exams and collobarate with faculty to refine course material and address common student challenges',
-                        },
-                        {
-                          title: 'Software Engineer',
-                          company: 'Take2',
-                          date: 'May 2024 - Aug 2024',
-                          description: 'Contributed to mobile app development using React-Native frontend and NoSQL backend, leading to a 30% reduction in network latency through efficient data caching and API optimization. Integrated Google Cloud Logging for real-time logging and performance monitoring across backend services. Implemented serverless infrastructure using Google Cloud Functions, ensuring accurate, real-time data consistency while minimizing backend maintenance by 27%.',
                         },
                       ].map((job, index) => (
                         <motion.div
@@ -312,7 +313,26 @@ export default function Portfolio() {
                           <h3 className="text-2xl font-semibold mb-2 text-white">{job.title}</h3>
                           <p className="text-cosmic-accent mb-2">{job.company}</p>
                           <p className="text-sm text-white/70 mb-4">{job.date}</p>
-                          <p className="text-white/90">{job.description}</p>
+                          <p className="text-white/90 mb-4">{job.description}</p>
+                          {job.link && (
+                            <motion.a
+                              href={job.link}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 px-4 py-1
+                                       bg-cosmic-primary/20 text-cosmic-light
+                                       hover:bg-cosmic-primary/30 
+                                       border border-cosmic-accent/40
+                                       hover:border-cosmic-accent 
+                                       rounded-md transition-all duration-300
+                                       text-sm font-medium"
+                              whileHover={{ scale: 1.05 }}
+                              whileTap={{ scale: 0.95 }}
+                            >
+                              <ExternalLink size={16} />
+                              View App
+                            </motion.a>
+                          )}
                         </motion.div>
                       ))}
                     </div>
