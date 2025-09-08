@@ -280,7 +280,7 @@ export default function Portfolio() {
                           title: 'Software Engineering Co-op (Backend)',
                           company: 'Priceline.com',
                           date: 'June 2025 – Present',
-                          description: 'Developing hotel booking microservices using Java Spring Boot framework on GCP Kubernetes clusters. Building real-time ghost booking detection system using Kafka consumers to identify booking state mismatches between Priceline and GDS systems, automatically canceling orphaned reservations to ensure data consistency. Optimizing database queries using Spring Data JPA with Google Cloud Spanner and implementing caching layers with Google Bigtable to reduce response times.',
+                          description: 'Building a ghost booking detection system using Kafka consumers to reconcile booking mismatches between Priceline’s Java Spring Boot services and 3rd party C# systems, automatically canceling 100+ reservations per month. Designing unit, end-to-end, and QA tests for ghostbooking system to ensure reliable results under scale.',
                         },
                         {
                           title: 'Software Engineering Co-Founder',
@@ -293,7 +293,7 @@ export default function Portfolio() {
                           title: 'Teaching Assistant',
                           company: 'Northeastern University',
                           date: 'Sept 2024 - May 2025',
-                          description: 'Guide students through complex topics relating to graph theory, recurrence, logic, and sorting algorithms in office hours. Lead Java-based labs for groups of 20 students and develop review sessions to reinforce key concepts. Grade student exams and collobarate with faculty to refine course material and address common student challenges',
+                          description: 'Guide students through complex topics relating to graph theory, recurrence, logic, and sorting algorithms in office hours. Lead Java-based labs for groups of 20 students and develop review sessions to reinforce key concepts. Grade student exams and collobarate with faculty to refine course material and address common student challenges.',
                         },
                       ].map((job, index) => (
                         <motion.div
