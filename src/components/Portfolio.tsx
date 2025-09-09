@@ -45,7 +45,7 @@ export default function Portfolio() {
       tech: ['Python', 'Flask', 'MySQL', 'Rest API', 'Streamlit'],
     },
     {
-      title: 'DISRUPT NEU',
+      title: 'DISRUPT NEU - Co-Director',
       description: 'Led an 8-week venture teaching students to prototype fintech products, culminating with a chance to win $5,000 in a pitch to investors. Introduced students to the fintech world, walking them through idea creation, idea validation, prototyping, and presentation. Networked with guest speakers and invited people from various companies (Claim, Toast, Fidelity, etc) to come present.',
       tech: ['Market Research', 'Product Development', 'Pitch Presentation', 'Leadership'],
     },
