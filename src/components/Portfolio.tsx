@@ -280,7 +280,7 @@ export default function Portfolio() {
                           title: 'Software Engineering Co-op (Backend)',
                           company: 'Priceline.com',
                           date: 'June 2025 – Present',
-                          description: 'Building a ghost booking detection system using Kafka consumers to reconcile booking mismatches between Priceline’s Java Spring Boot services and 3rd party C# systems, automatically canceling 100+ reservations per month. Designing unit, end-to-end, and QA tests for ghostbooking system to ensure reliable results under scale.',
+                          description: 'Building a ghost booking detection system using Kafka consumers to reconcile booking mismatches between Priceline’s Java Spring Boot services and 3rd party systems, automatically canceling 100+ reservations per month. Designing unit, end-to-end, and QA tests for ghostbooking system to ensure reliable results under scale.',
                         },
                         {
                           title: 'Software Engineering Co-Founder',
