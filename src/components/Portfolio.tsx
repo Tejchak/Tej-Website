@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence, useScroll, useTransform, useInView } from 'framer-motion'
-import { ChevronDown, GitlabIcon as GitHub, Linkedin, Mail, Calendar, ExternalLink, Database, Leaf, Server, Flame, Circle, Code2, FileCode, Ruler, FileText, Cloud, Terminal, Settings, Wrench, Globe, TabletSmartphone } from 'lucide-react'
+import { ChevronDown, GitlabIcon as GitHub, Linkedin, Mail, Calendar, ExternalLink, Phone } from 'lucide-react'
 import { TypeAnimation } from 'react-type-animation'
 import * as THREE from 'three'
 
@@ -21,38 +21,66 @@ export default function Portfolio() {
   const { scrollYProgress } = useScroll()
   const backgroundOpacity = useTransform(scrollYProgress, [0, 1], [0.5, 0.8])
 
-  // Projects array at the top of the component
   const projects: Project[] = [
     {
+      title: 'HabitHeap — Hackathon Winner',
+      description: 'Built a gamified habit-tracking iOS app for computer science students using Swift and MVVM architecture. Implemented Apple Vision and CoreLocation for real-time task verification and developed persistent state management to maintain user progress across sessions. Sponsored by Amazon, Klaviyo & Whoop.',
+      tech: ['Swift', 'MVVM', 'Apple Vision', 'CoreLocation', 'iOS'],
+    },
+    {
       title: 'PropertyPurpose',
-      description: 'Deployed Real Estate web app using VPC with subnet separation, placing EC2 backend in public subnet and RDS database in private subnet for enhanced security. Integrated multiple AWS services including API Gateway for RESTful endpoints, S3 for image storage with automated uploads, and AWS Cognito for authentication.',
-      tech: ['Node.js', 'Express.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'PostGIS', 'AWS'],
+      description: 'Deployed Real Estate web app using VPC with subnet separation, placing EC2 backend in public subnet and RDS database in private subnet for enhanced security. Integrated API Gateway for RESTful endpoints, and AWS S3 for image storage with automated uploads. Utilized AWS Cognito for authentication and created custom middleware with role-based access control.',
+      tech: ['Node.js', 'Express.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'AWS'],
       link: 'https://main.d19lrmdt5o1evc.amplifyapp.com/',
     },
     {
+      title: 'Disrupt: The Fintech Initiative (Co-Director)',
+      description: 'Led hands-on workshops teaching students how to use tools like SQL, Docker, and Python. Networked with guests and invited people from various companies (Claim, Toast, Fidelity, etc.) to present.',
+      tech: ['SQL', 'Docker', 'Python', 'Leadership', 'Workshops'],
+    },
+    {
       title: 'FUSE Filesystem',
-      description: 'Created a 1MB custom FUSE filesystem in C with core file operations (create, read, write, delete, rename), nested directories, and support for files up to 500KB in size using indirect block addressing. Designed a bitmap-based block allocation system with 4KB blocks, supporting 100+ small files.',
-      tech: ['C', 'Linux Kernel', 'FUSE', 'File Systems'],
+      description: 'Created a 1MB custom FUSE filesystem in C with core file operations (create, read, write, delete, rename). Implemented nested directories and support for files up to 500KB in size using indirect block addressing.',
+      tech: ['C', 'Linux Kernel', 'FUSE'],
     },
     {
       title: 'FinovaAI',
-      description: 'Deployed an AI web app with OpenAI, Wikipedia, and Yahoo Finance APIs for NLP, data retrieval, and market analysis. Designed a PostgreSQL database to store chat history and used Supabase for User Authentication.',
-      tech: [ 'Supabase', 'SQL', 'Langflow', 'OpenAI', 'Yahoo Finance', 'Next.js', 'React'],
+      description: 'Engineered a full-stack financial AI assistant with 500+ chat conversations stored in a PostgreSQL database. Integrated OpenAI, Yahoo Finance, and Wikipedia APIs for real-time market analysis and financial insights.',
+      tech: ['Angular.js', 'TypeScript', 'PostgreSQL', 'Supabase', 'OpenAI'],
     },
     {
       title: 'CO-OP CONNECT',
-      description: 'Designed a web app to help students find affordable housing and to connect them with other students nearby. Implemented the backend using a MySQL database, and created a REST API with Python + Flask as a data accessing layer. Built a UI with heatmaps and querying capabilities using the Streamlit framework and realistic Mockaroo-generated data.',
-      tech: ['Python', 'Flask', 'MySQL', 'Rest API', 'Streamlit'],
+      description: 'Designed a web app to help students find affordable housing and connect them with other students nearby. Implemented the backend using a MySQL database and created a REST API with Python + Flask as a data accessing layer. Built a UI with heatmaps and querying capabilities using the Streamlit framework and realistic Mockaroo-generated data.',
+      tech: ['Python', 'Flask', 'MySQL', 'REST API', 'Streamlit'],
     },
     {
-      title: 'DISRUPT NEU - Co-Director',
-      description: 'Led an 8-week venture teaching students to prototype fintech products, culminating with a chance to win $5,000 in a pitch to investors. Introduced students to the fintech world, walking them through idea creation, idea validation, prototyping, and presentation. Networked with guest speakers and invited people from various companies (Claim, Toast, Fidelity, etc) to come present.',
-      tech: ['Market Research', 'Product Development', 'Pitch Presentation', 'Leadership'],
+      title: 'Phi Delta Theta — Web Lead',
+      description: 'Integrated MongoDB with the frontend to efficiently manage and display member information. Collaborated in an Agile environment, leading weekly stand-ups and resolving blockers with team members.',
+      tech: ['MongoDB', 'Agile', 'Web Development'],
     },
     {
       title: 'Personal Website',
       description: "Created this website to showcase my skills, experiences, and who I am. Implemented interactive animations with Framer Motion. Leveraged TypeScript for type safety and scalability, and utilized Three.js's PerspectiveCamera for 3D particle effects.",
       tech: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Three.js'],
+    },
+  ];
+
+  const skills = [
+    {
+      category: 'Languages',
+      items: ['Java', 'Go', 'Ruby', 'Python', 'TypeScript', 'JavaScript', 'SQL', 'C', 'C++', 'Bash'],
+    },
+    {
+      category: 'Backend & Data',
+      items: ['Spring Boot', 'Node.js', 'Ruby on Rails', 'Express.js', 'gRPC', 'PostgreSQL', 'Redis', 'Kafka'],
+    },
+    {
+      category: 'Cloud & Infrastructure',
+      items: ['GCP', 'AWS', 'Azure', 'Kubernetes', 'Docker', 'Terraform', 'Helm', 'GitHub Actions', 'Jenkins'],
+    },
+    {
+      category: 'Security & Observability',
+      items: ['IAM', 'RBAC', 'OAuth 2.0', 'Google SecOps', 'New Relic', 'Splunk', 'OpenTelemetry'],
     },
   ];
 
@@ -129,7 +157,7 @@ export default function Portfolio() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'experience', 'projects', 'education', 'contact']
+      const sections = ['home', 'experience', 'skills', 'projects', 'education', 'contact']
       const currentSection = sections.find(section => {
         const element = document.getElementById(section)
         if (element) {
@@ -169,7 +197,7 @@ export default function Portfolio() {
             <div className="flex items-center justify-between">
               <span className="text-2xl font-bold text-white">Tej Chakravarthy</span>
               <div className="space-x-4">
-                {['Home', 'Experience', 'Projects', 'Education', 'Contact'].map((item, index) => (
+                {['Home', 'Experience', 'Skills', 'Projects', 'Education', 'Contact'].map((item, index) => (
                   <motion.button
                     key={item}
                     onClick={() => scrollToSection(item.toLowerCase())}
@@ -211,7 +239,7 @@ export default function Portfolio() {
                         1000,
                         'Software Engineer',
                         1000,
-                        'Problem Solver',
+                        'Take2 Co-Founder',
                         1000,
                       ]}
                       wrapper="h1"
@@ -220,14 +248,6 @@ export default function Portfolio() {
                       repeat={Infinity}
                     />
                   </motion.div>
-                  <motion.p
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 1 }}
-                    className="text-xl mb-8 text-white/80"
-                  >
-                    Computer Science Student & Aspiring Software Engineer
-                  </motion.p>
                   <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -274,65 +294,125 @@ export default function Portfolio() {
                     transition={{ duration: 0.6 }}
                   >
                     <h2 className="text-4xl font-bold mb-8 text-white">Experience</h2>
-                    <div className="space-y-8">
+                    <div className="relative">
+                      <div className="hidden sm:block absolute left-32 md:left-40 top-2 bottom-2 w-0.5 bg-gradient-to-b from-cosmic-accent/70 via-cosmic-accent/30 to-transparent" />
+                      <div className="space-y-10">
                       {[
                         {
-                          title: 'Software Engineering Co-op (Backend)',
-                          company: 'Priceline.com',
-                          date: 'June 2025 – Present',
-                          description: 'Building a ghost booking detection system using Kafka consumers to reconcile booking mismatches between Priceline’s Java Spring Boot services and 3rd party systems, automatically canceling 100+ reservations per month. Designing unit, end-to-end, and QA tests for ghostbooking system to ensure reliable results under scale.',
+                          title: 'Software Engineering Intern, Infrastructure Security',
+                          company: 'Shopify | New York, NY',
+                          date: 'June 2026 – August 2026',
+                          description: 'Leading Shopify\'s multi-cloud migration to YugabyteDB, expanding infrastructure from GCP to AWS and Azure. Authored Terraform-based SCPs and Azure policies blocking public firewalls, exposed RDS instances, and unauthorized external identities. Built a Google SecOps dashboard to detect service accounts with 30+ days of unused PCI data access, then automated pruning via a scheduled script, removing access from 150+ accounts and cutting attack surface by 80%. Eliminated public IP exposure across 41 Cloud SQL instances via VPC or Cloud SQL Auth Proxy, then shipped an org-wide policy permanently denying public IPs.',
+                        },
+                        {
+                          title: 'Backend Software Engineering Co-op',
+                          company: 'Priceline.com | New York, NY',
+                          date: 'June 2025 – December 2025',
+                          description: 'Built a ghost booking detection system using Kafka consumers to reconcile booking state mismatches between Priceline\'s Java services and 3rd-party systems, automatically canceling 1000+ reservations/month. Migrated heavy batch processing workloads to Google Cloud Spanner and addressed performance bottlenecks by using Google Bigtable for large-scale lookup patterns with Spring Boot. Deployed booking services to GKE, sustaining 99.95% uptime while processing 2B+ events daily.',
                         },
                         {
                           title: 'Software Engineering Co-Founder',
-                          company: 'Take2 Movies and Shows',
-                          date: 'May 2024 – Present',
-                          description: 'Architected and deployed a cross-platform social media app using React Native/TypeScript—now live on the iOS App Store with 500+ active users. Integrated Google Cloud Logging for real-time logging and performance monitoring across backend services. Implemented serverless infrastructure using Google Cloud Functions, ensuring accurate, real-time data consistency while minimizing backend maintenance by 27%.',
+                          company: 'Take2 Movies and Shows | Remote',
+                          date: 'May 2025 – Present',
+                          description: 'Architected and deployed a full-stack social media app using React Native frontend and Node.js backend, now live on the iOS App Store with 500+ active users. Redesigned backend into containerized microservices on Cloud Run, enabling independent service scaling and reducing peak infrastructure costs by 30%. Optimized follower feed loading with a paginated caching strategy, cutting feed load times from 2.3s to 250ms. Migrated notification and feed-update workflows to Cloud Functions, reducing workflow failures by 38% through automated retries and idempotent event handling.',
                           link: 'https://apps.apple.com/us/app/take2-movies-shows/id6737178731',
                         },
                         {
-                          title: 'Teaching Assistant',
-                          company: 'Northeastern University',
-                          date: 'Sept 2024 - May 2025',
-                          description: 'Guide students through complex topics relating to graph theory, recurrence, logic, and sorting algorithms in office hours. Lead Java-based labs for groups of 20 students and develop review sessions to reinforce key concepts. Grade student exams and collobarate with faculty to refine course material and address common student challenges.',
+                          title: 'Teaching Assistant (Algorithms and Data)',
+                          company: 'Northeastern University | Boston, MA',
+                          date: 'September 2024 – May 2025',
+                          description: 'Guided students through complex topics relating to graph theory, recurrence, logic, and sorting algorithms. Led labs for groups of 20 students and developed review sessions to reinforce key concepts in Python.',
                         },
                       ].map((job, index) => (
                         <motion.div
                           key={index}
-                          initial={{ opacity: 0, x: -50 }}
+                          initial={{ opacity: 0, x: -30 }}
                           whileInView={{ opacity: 1, x: 0 }}
-                          viewport={{ once: false }}
-                          transition={{ duration: 0.6 }}
-                          className="bg-black/40 p-6 rounded-lg
+                          viewport={{ once: false, margin: "-50px" }}
+                          transition={{ duration: 0.6, delay: index * 0.1 }}
+                          className="flex flex-col sm:flex-row sm:items-start gap-3 sm:gap-6 md:gap-8"
+                        >
+                          <div className="sm:w-32 md:w-40 sm:flex-shrink-0 relative sm:text-right sm:pt-2 sm:pr-5">
+                            <span className="text-sm font-semibold text-cosmic-glow">{job.date}</span>
+                            <div className="hidden sm:block absolute right-0 top-1.5 translate-x-1/2 w-4 h-4
+                                      rounded-full bg-cosmic-accent ring-4 ring-cosmic-dark
+                                      shadow-[0_0_12px_rgba(156,195,228,0.7)]" />
+                          </div>
+                          <div className="flex-1 bg-black/40 p-6 rounded-lg
                                     shadow-[0_0_20px_rgba(127,179,213,0.15)]
                                     hover:shadow-[0_0_25px_rgba(127,179,213,0.25)]
                                     backdrop-blur-sm
                                     border border-cosmic-accent/20
                                     hover:border-cosmic-accent/40
-                                    hover:transform hover:scale-[1.02]"
+                                    hover:transform hover:scale-[1.02]
+                                    transition-all duration-300">
+                            <h3 className="text-2xl font-semibold mb-2 text-white">{job.company}</h3>
+                            <p className="text-cosmic-accent mb-4">{job.title}</p>
+                            <p className="text-white/90 mb-4">{job.description}</p>
+                            {job.link && (
+                              <motion.a
+                                href={job.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 px-4 py-1
+                                         bg-cosmic-primary/20 text-cosmic-light
+                                         hover:bg-cosmic-primary/30
+                                         border border-cosmic-accent/40
+                                         hover:border-cosmic-accent
+                                         rounded-md transition-all duration-300
+                                         text-sm font-medium"
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                              >
+                                <ExternalLink size={16} />
+                                View App
+                              </motion.a>
+                            )}
+                          </div>
+                        </motion.div>
+                      ))}
+                      </div>
+                    </div>
+                  </motion.div>
+                </div>
+              </section>
+
+              <section id="skills" className="py-20 bg-cosmic-dark/30 backdrop-blur-sm">
+                <div className="container mx-auto px-6">
+                  <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false, margin: "-100px" }}
+                    transition={{ duration: 0.6 }}
+                  >
+                    <h2 className="text-4xl font-bold mb-8 text-white">Skills</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                      {skills.map((group, index) => (
+                        <motion.div
+                          key={index}
+                          initial={{ opacity: 0, y: 30 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: false }}
+                          transition={{ duration: 0.6, delay: index * 0.1 }}
+                          className="bg-black/40 p-6 rounded-lg
+                                    shadow-[0_0_20px_rgba(127,179,213,0.15)]
+                                    hover:shadow-[0_0_25px_rgba(127,179,213,0.25)]
+                                    backdrop-blur-sm
+                                    border border-cosmic-accent/20
+                                    hover:border-cosmic-accent/40"
                         >
-                          <h3 className="text-2xl font-semibold mb-2 text-white">{job.title}</h3>
-                          <p className="text-cosmic-accent mb-2">{job.company}</p>
-                          <p className="text-sm text-white/70 mb-4">{job.date}</p>
-                          <p className="text-white/90 mb-4">{job.description}</p>
-                          {job.link && (
-                            <motion.a
-                              href={job.link}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center gap-2 px-4 py-1
-                                       bg-cosmic-primary/20 text-cosmic-light
-                                       hover:bg-cosmic-primary/30 
-                                       border border-cosmic-accent/40
-                                       hover:border-cosmic-accent 
-                                       rounded-md transition-all duration-300
-                                       text-sm font-medium"
-                              whileHover={{ scale: 1.05 }}
-                              whileTap={{ scale: 0.95 }}
-                            >
-                              <ExternalLink size={16} />
-                              View App
-                            </motion.a>
-                          )}
+                          <h3 className="text-xl font-semibold mb-4 text-cosmic-accent">{group.category}</h3>
+                          <div className="flex flex-wrap gap-2">
+                            {group.items.map((item, itemIndex) => (
+                              <span
+                                key={itemIndex}
+                                className="bg-cosmic-primary/20 text-cosmic-light px-2 py-1 rounded-md
+                                         border border-cosmic-accent/20 text-sm"
+                              >
+                                {item}
+                              </span>
+                            ))}
+                          </div>
                         </motion.div>
                       ))}
                     </div>
@@ -425,11 +505,14 @@ export default function Portfolio() {
                                 hover:transform hover:scale-[1.02]"
                     >
                       <h3 className="text-2xl font-semibold mb-2 text-white">Northeastern University</h3>
-                      <p className="text-cosmic-accent mb-2">Khoury College of Computer Sciences</p>
-                      <p className="text-sm text-white/70 mb-4">Sept 2023 - May 2027</p>
-                      <p className="text-white/90">Major: Computer Science | GPA: 3.9 | Dean's List</p>
+                      <p className="text-cosmic-accent mb-2">Khoury College of Computer Sciences, Boston, MA</p>
+                      <p className="text-sm text-white/70 mb-4">September 2023 – Present | Expected: May 2027</p>
+                      <p className="text-white/90">Bachelor of Science in Computer Science | GPA: 3.9/4.0</p>
                       <p className="mt-2 text-white/90">
-                      Relevant Coursework: Object Oriented Design, Algorithms and Data, Computer Systems, Machine Learning and Data Mining, Database Design, Discrete Structures, Foundations of Cybersecurity
+                        Honors: 3x Hackathon Winner, 6x Dean&apos;s List, Khoury College of Computer Sciences Academic Scholarship
+                      </p>
+                      <p className="mt-2 text-white/90">
+                        Relevant Coursework: Object-Oriented Design, Algorithms, Machine Learning, Computer Systems, Databases
                       </p>
                     </motion.div>
                   </motion.div>
@@ -463,9 +546,10 @@ export default function Portfolio() {
                         and industry professionals. Whether you have a question, want to discuss a project, 
                         or just want to say hello, feel free to reach out!
                       </p>
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
                       {[
                         { href: "mailto:tejchak04@gmail.com", icon: Mail, text: "Email Me" },
+                        { href: "tel:+18607098364", icon: Phone, text: "(860) 709-8364" },
                         { href: "https://www.linkedin.com/in/tejchakravarthy/", icon: Linkedin, text: "Connect on LinkedIn" },
                         { href: "https://github.com/Tejchak", icon: GitHub, text: "Check My GitHub" },
                         { href: "https://outlook.office.com/bookwithme/user/c74682626214455abcbf8db28ad004f9@northeastern.edu?anonymous&ep=plink", 
